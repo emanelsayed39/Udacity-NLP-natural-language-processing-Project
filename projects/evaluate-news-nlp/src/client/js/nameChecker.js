@@ -1,16 +1,12 @@
 function checkForName(inputText) {
-    console.log("::: Running checkForName :::", inputText);
-    let names = [
-        "Picard",
-        "Janeway",
-        "Kirk",
-        "Archer",
-        "Georgiou"
-    ]
+               var pattern = new RegExp('^(https?:\\/\\/)?'+ 
+            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ 
+            '((\\d{1,3}\\.){3}\\d{1,3}))'+ // 
+            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ 
+            '(\\?[;&amp;a-z\\d%_.~+=-]*)?'+ 
+            '(\\#[-a-z\\d_]*)?$','i');
+            return pattern.test(inputText);
+         }
 
-    if(names.includes(inputText)) {
-        alert("Welcome, Captain!")
-    }
-}
 
-export { checkForName }
+export {checkForName}
